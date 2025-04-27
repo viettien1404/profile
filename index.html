@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .fps-counter {
+      position: fixed;
+      top: 5px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: lime;
+      font-size: 14px;
+      z-index: 9999;
+      font-family: Orbitron;
+    }
+
+    .snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 998;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      color: white;
+      font-size: 10px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar-frame {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+  }
+
+  .avatar-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+
+    h1 {
+      font-size: 22px;
+      margin: 10px 0;
+      color: black;
+    }
+
+    .verified {
+      color: #00f0ff;
+      margin-left: 5px;
+    }
+
+    .social-icons a {
+      font-size: 24px;
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      filter: drop-shadow(0 0 5px black);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .social-icons a:hover {
+      color: #00f0ff;
+      transform: scale(1.1);
+    }
+
+    .info {
+      font-size: 14px;
+      margin: 20px 0;
+      line-height: 1.6;
+      color: #000;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .timer {
+      color: red;
+      margin-top: 10px;
+    }
+
+    .music-btn {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #00f0ff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    select {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 5px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
+      h1 {
+        font-size: 18px;
+      }
+      .info {
+        font-size: 12px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="background.mp4" type="video/mp4"> <!-- Video nền thay ở đây -->
+  </video>
+
+  <div id="fps" class="fps-counter">FPS: 0</div>
+  <div class="snow"></div>
+  <div class="container">
+    <div class="avatar-frame">
+      <img src="avatar.jpg" alt="avatar" class="avatar">
+      <img src="frame.png" alt="border" class="avatar-border">
+    </div>      
+     <h1><span style="color: rgb(0, 255, 251);">Việt Tiến</span>✅ <span class="verified"></span></h1>
+
+    <div class="social-icons">
+      <!-- Thay thông tin liên lạc -->
+      <!-- Thay thông tin liên lạc -->
+<!-- Thay thông tin liên lạc -->
+<a href="mailto:leviettien.n1404@gmail.com " target="_blank"><i class="fas fa-envelope"></i></a>
+<a href="https://t.me/" target="_blank"><i class="fab fa-telegram"></i></a>
+<a href="https://www.facebook.com/share/1Bh9qgQ64B/" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@viettien1404?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+
+    
+    
+
+    <!-- Thay dịch vụ của bạn ở đây -->
+    <div class="info" style="color: #ffeb3b; font-weight: bold; text-shadow: 2px 2px 5px #000000;">
+        ĐẾN TỪ: NINH BÌNH<br>
+        NƠI Ở HIỆN TẠI: QUẢNG NINH<br>
+        NGÀNH HỌC: SP TIN HỌC<br>
+        TÌNH TRẠNG: ĐỘC THÂN<br>
+        ZALO: 0983.928.330
+      </div>
+      
+      
+
+    <div class="timer">
+      Date created: <span id="timer"></span>
+    </div>
+
+    <div class="music-btn">
+      <select onchange="changeSong(this.value)">
+        <option value="">Play Music</option>
+        <!-- Thay nhạc ở đây-->
+        <option value=" ./mottinhyeuhaithuthach.mp3">Một Tình Yêu Hai Thử Thách  Remix</option>
+        <option value="./ngayhanhphuc.mp3  ">Ngày Hạnh Phúc  Remix</option>
+        <option value="./noinaycoanh.mp3">Nơi Này Có Anh </option>
+        <option value="./dieuanhbiet.mp3">Điều Anh Biết </option>
+        <option value="./cochacyeuladay.mp3">Có Chắc Yêu là Đây </option>
+      </select>
+      <audio id="bgMusic" autoplay loop hidden></audio>
+    </div>
+  </div>
+  <script>
+    let currentSong = "";
+    function updateTimer() {
+      const createdAt = new Date("2025-04-22T00:00:00");
+      const now = new Date();
+      const diff = Math.floor((now - createdAt) / 1000);
+      const days = Math.floor(diff / (3600 * 24));
+      const hours = Math.floor((diff % (3600 * 24)) / 3600);
+      const minutes = Math.floor((diff % 3600) / 60);
+      const seconds = diff % 60;
+      document.getElementById("timer").innerText = `${days} day ${hours} hour ${minutes} minute ${seconds} second`;
+    }
+
+    function changeSong(url) {
+      const audio = document.getElementById("bgMusic");
+      if (url !== currentSong) {
+        currentSong = url;
+        audio.src = url;
+        audio.play();
+      }
+    }
+
+    function createSnowflakes() {
+      const snow = document.querySelector('.snow');
+      for (let i = 0; i < 100; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.innerHTML = '.';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = (2 + Math.random() * 3) + 's';
+        snowflake.style.opacity = Math.random();
+        snowflake.style.fontSize = (8 + Math.random() * 10) + 'px';
+        snow.appendChild(snowflake);
+      }
+    }
+
+    let lastFrame = performance.now();
+    let frameCount = 0;
+    let fps = 0;
+
+    function updateFPS() {
+      const now = performance.now();
+      frameCount++;
+      if (now - lastFrame >= 1000) {
+        fps = frameCount;
+        frameCount = 0;
+        lastFrame = now;
+        document.getElementById("fps").innerText = "FPS: " + fps;
+      }
+      requestAnimationFrame(updateFPS);
+    }
+
+    setInterval(updateTimer, 1000);
+    window.onload = () => {
+      updateTimer();
+      createSnowflakes();
+      updateFPS();
+    };
+  </script>
+</body>
+</html>
